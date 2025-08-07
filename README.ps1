@@ -6,7 +6,7 @@
 
 # Define source URL and initial download path
 $dllUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/badmos-gabber.dll"
-$originalPath = "D:\virtualbox\KaliLinux\Logs\badmos-g*abber.dll"
+$originalPath = "D:\virtualbox\KaliLinux\Logs\badmos-gabber.dll"
 $renamedPath = "D:\virtualbox\KaliLinux\Logs\d3dcompiler_47.dll"
 
 # Download the DLL
