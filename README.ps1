@@ -59,4 +59,14 @@ Start-Job -ScriptBlock {
         Remove-Item -Path "HKCU:\Software\Microsoft\Windows\Shell\Bags" -Recurse -Force -ErrorAction SilentlyContinue
     } catch {}
 } | Out-Null
+# STEP 7: Clear PowerShell history
+try {
+    # Clear in-memory history
+    [System.Management.Automation.PSConsoleReadLine]::ClearHistory() 2>$null
 
+    # Clear history file on disk
+    $historyFile = "$env:APPDATA\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt"
+    if (Test-Path $historyFile) {
+        Remove-Item -Path $historyFile -Force -ErrorAction SilentlyContinue
+    }
+} catch {}
